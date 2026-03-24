@@ -370,10 +370,11 @@ export default function DashboardPage() {
           <h2 style={{ fontSize: '16px', fontWeight: 700, color: '#fff', marginBottom: '14px' }}>Quick Actions</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '14px', marginBottom: '32px' }}>
             {quickActions.map((action, i) => (
-              <motion.button key={action.id}
-                initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + i * 0.07 }}
-                whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}
-                style={{ background: action.gradient, border: `0.5px solid ${action.glow.replace('0.1', '0.3').replace('0.15', '0.3')}`, borderRadius: '16px', padding: '24px 20px', cursor: 'pointer', textAlign: 'left', fontFamily: 'Urbanist,sans-serif', boxShadow: `0 4px 32px ${action.glow}`, position: 'relative', overflow: 'hidden' }}>
+            <motion.button key={action.id}
+  initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 + i * 0.07 }}
+  whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}
+  onClick={() => { if (action.id === 'resume') window.location.href = '/resume/new'; }}
+  style={{ background: action.gradient, border: `0.5px solid ${action.glow.replace('0.1', '0.3').replace('0.15', '0.3')}`, borderRadius: '16px', padding: '24px 20px', cursor: 'pointer', textAlign: 'left', fontFamily: 'Urbanist,sans-serif', boxShadow: `0 4px 32px ${action.glow}`, position: 'relative', overflow: 'hidden' }}>
                 <span style={{ position: 'absolute', top: '12px', right: '12px', padding: '3px 8px', borderRadius: '6px', background: 'rgba(0,0,0,0.3)', color: action.badgeColor, fontSize: '10px', fontWeight: 700, letterSpacing: '0.5px' }}>
                   {action.badge}
                 </span>
