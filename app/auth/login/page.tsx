@@ -71,12 +71,14 @@ useEffect(() => {
     }
   };
 
-  const handleGoogle = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: 'google',
+ const handleGoogle = async () => {
+  await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
       redirectTo: `${window.location.origin}/auth/callback`
-    });
-  };
+    }
+  });
+};
 
   return (
     <div style={{ minHeight: '100vh', background: '#09090f', display: 'flex', fontFamily: 'Urbanist,sans-serif' }}>
