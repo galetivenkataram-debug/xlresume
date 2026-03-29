@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap');
 
 * {
   margin: 0;
@@ -6,68 +6,42 @@
   box-sizing: border-box;
 }
 
-:root {
-  --bg-primary: #09090f;
-  --bg-secondary: #0d0d18;
-  --bg-card: #111120;
-  --bg-card-hover: #16162a;
-  --border: #1e1e2e;
-  --border-light: #2a2a3a;
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0b8;
-  --text-muted: #555570;
-  --orange-start: #ff4500;
-  --orange-mid: #fb923c;
-  --orange-end: #facc15;
-  --gradient: linear-gradient(135deg, #ff4500, #fb923c, #facc15);
-  --gradient-text: linear-gradient(90deg, #ff4500, #facc15);
-  --font: 'Urbanist', sans-serif;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font);
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-.gradient-text {
-  background: var(--gradient-text);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-border {
-  border: 1px solid transparent;
-  background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
-              var(--gradient) border-box;
-}
-
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 5px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #2a2a3a;
-  border-radius: 2px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #fb923c;
+  background: #2a2a38;
+  border-radius: 3px;
 }
 
 ::selection {
-  background: rgba(251, 146, 60, 0.3);
-  color: #fff;
+  background: rgba(255, 69, 0, 0.25);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: 'DM Sans', sans-serif;
 }
