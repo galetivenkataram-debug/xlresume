@@ -114,7 +114,21 @@ if (looksLikeTypo) {
         }
       });
       if (error) throw error;
-      window.location.href = '/auth/login?signup=success';
+
+// Auto sign in immediately after signup
+const { error: signInError } = await supabase.auth.signInWithPassword({
+  email,
+  password,
+});
+
+if (signInError) {
+  // If auto login fails, fall back to login page
+  window.location.href = '/auth/login?signup=success';
+  return;
+}
+
+// Go straight to onboarding
+window.location.href = '/onboarding';
     } catch (err: any) {
       setError(err.message || 'Something went wrong. Please try again.');
     } finally {
